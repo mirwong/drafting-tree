@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Draft</title>
+
+    <link type="text/css" rel="stylesheet" href="style_main.css" />
+
+    <!-- figure out how to use require in the JS sometime - may need to reinstall command line tools -->
+    <script src="https://github.com/RobertWHurst/KeyboardJS/blob/master/dist/keyboard.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="editor_bundle.js"></script>
+</head>
+
+<body>
+    <div id="topbar">
+        <nav id="main-nav">
+            <ul>Topbar</ul>
+        </nav>
+    </div>
+    <div id="sidebar">
+        <ul class="doc-links">
+            <ul class="doc-links">
+                <li><a href="">Sidelink 1</a></li>
+                <li><a href="">Sidelink 2</a></li>
+            </ul>
+            <ul class="doc-links">
+                <li><a href="">Sidelink 3</a></li>
+                <li><a href="">Sidelink 4</a></li>
+            </ul>
+        </ul>
+    </div>
+
+    <div id="main">
+        <div id="document" contenteditable="true">
+            <div class="doc-section doc-level-1">
+                Top level
+            </div>
+            <div class="doc-section doc-level-2">
+                Middle level
+                <span class="short-option">option 1</span><span class="short-option-separator">or</span><span class="short-option">option 2</span>
+            </div>
+            <div class="doc-section doc-level-2">other middle</div>
+        </div>
+    </div>
+</body>

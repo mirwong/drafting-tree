@@ -1,0 +1,19 @@
+{
+  "name": "drafting-tree",
+  "version": "1.0.0",
+  "description": "a way to write drafts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-mirwong:mirwong/drafting-tree.git"
+  },
+  "author": "mirwong",
+  "license": "ISC",
+  "dependencies": {
+    "keyboardjs": "^2.6.4",
+    "watchify": "^3.11.1"
+  }
+}
