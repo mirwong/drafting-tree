@@ -11,11 +11,19 @@ $(document).ready(function() {
      };
 
      var splitDraft2 = function (e) {
-         var newPane1 = $('div.doc-section.doc-level-2');
-         var newPane2 = $('div.doc-section.doc-level-2');
-         $(this).after(newPane1);
-         $(this).after(newPane2);
-         return true;
+         console.log('trying to split');
+         var focused = $(':focus');
+
+         for (i=0; i<3; i++) {
+             var newPane = $('<div></div>');
+             newPane.addClass('doc-section');
+             newPane.addClass('doc-level-2');
+             newPane.addClass('new');
+             focused.append(newPane);
+         }
+
+         console.log($('.new'));
+         return false;
      };
 
      var splitDraft3 = function (e) {
@@ -25,26 +33,24 @@ $(document).ready(function() {
          $(this).after(newPane1);
          $(this).after(newPane2);
          $(this).after(newPane3);
-         return true;
+         return false;
      };
 
      var addShortOption = function (e) {
-         ;
-     }
 
-     $("#document").focus(function (e) {
-         keyboardJS.bind('shift + 2', splitDraft2);
-         keyboardJS.bind('shift + 3', splitDraft3);
-         keyboardJS.bind('shift + del', function (e) {
-             // delete this section
-         });
-         keyboardJS.bind('shift + o', addShortOption);
-     }
-     );
+     };
+
+     var doc = document.querySelector('#document');
+     var mousetrap = new Mousetrap(doc);
+     mousetrap.bind('shift+2', splitDraft2);
+     mousetrap.bind('shift + 3', splitDraft3);
+     mousetrap.bind('shift + del', function (e) {
+         // delete this section
+     });
+     mousetrap.bind('shift + o', addShortOption);
 
      $(".short-option").focus(function (e) {
-         ;
-     })
+     });
 
      // enable Markdown? Key bindings: listen for # * _ etc.
 
